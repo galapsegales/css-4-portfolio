@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: '.',
-});
+  base: '/css-1-header-spa-beauty/', 
+})
+
