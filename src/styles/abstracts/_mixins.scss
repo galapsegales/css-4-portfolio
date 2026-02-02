@@ -7,4 +7,49 @@
   list-style: none;
 }
 
+/* BREAKPOINTS */
 
+@mixin breakpoint($bp) {
+  @if $bp == tablet {
+    @media (min-width: $bp-tablet) {
+      @content;
+    }
+  }
+
+  @if $bp == tablethorizontal {
+    @media (min-width: $bp-tablet-horizontal) {
+      @content;
+    }
+  }
+
+  @if $bp == desktop {
+    @media (min-width: $bp-desktop) {
+      @content;
+    }
+  }
+
+  @if $bp == desktopxl {
+    @media (min-width: $bp-desktop-xl) {
+      @content;
+    }
+  }
+}
+
+/* IMAGE SWITCHER */
+
+@mixin img-switcher($base-path) {
+  
+  background-image: url("#{$base-path}-m.png");
+  background-size: cover;
+  background-position: center;
+
+  // Tablet
+  @include breakpoint(tablet) {
+    background-image: url("#{$base-path}-tablet.png");
+  }
+
+  // Desktop
+  @include breakpoint(desktop) {
+    background-image: url("#{$base-path}-desktop.png");
+  }
+}
