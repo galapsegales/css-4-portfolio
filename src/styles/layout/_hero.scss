@@ -3,3 +3,38 @@
 
 /* Hero */
 
+.hero {
+    &__img {
+        width: 55%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3rem;
+        margin-bottom: 2.5rem;
+
+        
+        @include img-switcher('../../src/img/hero');
+        aspect-ratio: 87 / 121;
+        
+
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &--title {
+            text-align: center;
+            font-family: $font-stack;
+            font-size: 2.5rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 2.5rem;
+            letter-spacing: -0.071rem;
+            >span {
+                font-size: inherit;
+                text-decoration: underline $green;
+            }
+        }
+    }
+}

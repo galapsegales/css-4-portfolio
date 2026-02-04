@@ -3,3 +3,33 @@
 
 /* Header */
 
+.header {
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1.25rem;
+        gap: 1.25rem;
+
+        &--social {
+            display: flex;
+            gap: 1.5rem;
+
+            >li {
+                @include reset-list;
+            }
+        }
+    }
+}
+
+
+.header__nav--social {
+  svg path {
+    fill: $white;
+    transition: fill 0.2s ease;
+  }
+  
+  a:hover svg path {
+    fill: $green;
+  }
+}

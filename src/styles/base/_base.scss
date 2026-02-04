@@ -3,11 +3,13 @@
 * {
     font-size: 16px;
     font-family: $font-stack;
+    color: $white;
     
 }
 
 body {
     overflow-x: hidden;
+    background-color: $black;
 }
 
 img {
