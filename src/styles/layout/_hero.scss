@@ -39,7 +39,9 @@
             >span {
                 font-size: inherit;
                 text-decoration: underline;
+                text-decoration-thickness: 0.25rem;
                 text-decoration-color: $green;
+                text-underline-offset: 0.22rem;
             }
         }
 
