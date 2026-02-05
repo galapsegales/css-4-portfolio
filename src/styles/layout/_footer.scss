@@ -1,1 +1,144 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
 /* Footer */
+.footerbg {
+    background-color: $dark-grey;
+    padding-top: 3.75rem;
+}
+
+.footer {   
+    &__contact {
+        margin-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+        
+        &--title {
+            font-size: 2.5rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 2.5rem;
+            letter-spacing: -0.071rem;
+        }
+
+        &--subtitle {
+            color: $light-grey;
+            text-align: center;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.625rem;
+        }
+    }
+
+    &__form {
+
+        padding-bottom: 5.44rem;
+        border-bottom: 1px solid $white;
+        
+        &--group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2.5rem;
+            position: relative;
+
+            input,
+            textarea {
+                width: 100%;
+                padding: 0 0 1.2rem;
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid $white;
+                color: $white;
+                font: inherit;
+                letter-spacing: -0.222px;
+                resize: none; 
+                text-indent: 2.4rem;
+                text-transform: uppercase;
+                
+                &::placeholder {
+                    color: $light-grey;
+                    text-transform: uppercase;
+                    opacity: .7;
+                }
+    
+                &:focus {
+                    outline: none;
+                    border-bottom: 1px solid $light-grey;
+                    background: transparent;
+                }
+
+                &:active {
+                    background: transparent;
+                }
+
+                // Forzar fondo transparente en autocompletado del navegador
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus,
+                &:-webkit-autofill:active {
+                    -webkit-box-shadow: 0 0 0 1000px $dark-grey inset;
+                    -webkit-text-fill-color: $white;
+                    transition: background-color 5000s ease-in-out 0s;
+                }
+            }
+
+            .error-icon {
+                display: none;
+                position: absolute;
+                right: 0;
+                right: .5rem;
+                top: 0;
+                bottom: 0;
+                margin: 0 auto;
+                pointer-events: none;
+            }
+        
+            .error-message {
+                display: none;
+                color: $red;
+                font-size: 0.75rem;
+                text-align: right;
+                margin-top: 0.5rem;
+            }
+
+    
+            input:invalid:not(:placeholder-shown),
+            textarea:invalid:not(:placeholder-shown) {
+                border-bottom-color: $red;
+                background: transparent;
+            }
+
+            // Mostrar icono y mensaje de error
+            input:invalid:not(:placeholder-shown) ~ .error-icon,
+            textarea:invalid:not(:placeholder-shown) ~ .error-icon,
+            input:invalid:not(:placeholder-shown) ~ .error-message,
+            textarea:invalid:not(:placeholder-shown) ~ .error-message {
+                display: block;
+            }
+
+            // Estado de éxito
+            input:valid:not(:placeholder-shown),
+            textarea:valid:not(:placeholder-shown) {
+                border-bottom-color: $green;
+            }
+        }
+
+        &--button {
+            text-align: right;
+
+            .btn {
+                background: transparent;
+                border: none;
+                font-weight: 600;
+            }
+        }
+    }
+    &>header {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
+

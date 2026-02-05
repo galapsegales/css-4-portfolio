@@ -4,3 +4,8 @@
   margin: 0;
   padding: 0;
 }
+
+button {
+  all: unset;
+  cursor: pointer; /* Lo añadimos para que siga pareciendo interactivo */
+}
