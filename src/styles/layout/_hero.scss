@@ -38,7 +38,8 @@
             letter-spacing: -0.071rem;
             >span {
                 font-size: inherit;
-                text-decoration: underline $green;
+                text-decoration: underline;
+                text-decoration-color: $green;
             }
         }
 
