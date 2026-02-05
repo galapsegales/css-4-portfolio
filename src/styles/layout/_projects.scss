@@ -1,0 +1,127 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+/* PROJECTS */
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-bottom: 5rem;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5rem;
+
+        &--title {
+            font-size: 2.5rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 2.5rem; /* 100% */
+            letter-spacing: -0.071rem;
+        }
+    }
+
+    .project {
+        
+        &__img {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+
+            &-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $overlay;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 3rem;
+                display: flex;
+                opacity: 0;
+                transition: opacity .2s ease;
+            }
+
+            &:hover {
+                @include breakpoint(desktop) {
+                    .project__img-overlay {
+                    opacity: 1;
+                    }
+                }   
+            }
+        }
+
+        &--title {
+
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 2rem;
+            text-transform: uppercase;
+            padding: 1.25rem 0 0.5rem 0;
+        }
+
+        &--tech {
+            display: flex;
+            justify-content: flex-start;
+            gap: 2rem;
+            &-name {
+                font-size: 1.125rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 1.75rem;
+                color: $light-grey;
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 2rem;
+            margin-top: 1.25rem;
+
+            @include breakpoint(desktop) {
+                display: none;
+            }
+        }
+    }
+
+}
+
+/* PROJECT IMAGES SWITCH */
+
+.design {
+    @include project-img-switcher('../../src/img/project-1');
+    aspect-ratio: 4 / 3;
+}
+
+.landing {
+    @include project-img-switcher('../../src/img/project-2');
+    aspect-ratio: 4 / 3;
+}
+
+.todo {
+    @include project-img-switcher('../../src/img/project-3');
+    aspect-ratio: 4 / 3;
+}
+
+.entertainment {
+    @include project-img-switcher('../../src/img/project-4');
+    aspect-ratio: 4 / 3;
+}
+
+.memory {
+    @include project-img-switcher('../../src/img/project-5');
+    aspect-ratio: 4 / 3;
+}
+
+.art {
+    @include project-img-switcher('../../src/img/project-6');
+    aspect-ratio: 4 / 3;
+}
+
+    
