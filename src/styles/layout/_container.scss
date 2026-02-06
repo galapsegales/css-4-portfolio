@@ -9,6 +9,10 @@
     padding-left: 1rem;
     padding-right: 1rem;
 
+    @include breakpoint(tablet){
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
 }
 
 .containerbg_head {
@@ -16,6 +20,10 @@
     url('../../img/bg-oval.svg');
     background-position: 250% 10%, 127% 21%;
     background-repeat: no-repeat;
+
+    @include breakpoint(tablet) {
+        background-position: -90% 5%, 109% 44%;
+    }
 }
 
 .containerbg_features {
@@ -33,6 +41,10 @@
         background-repeat: no-repeat;
         background-position: -150% 91%; 
         z-index: -1;
+
+        @include breakpoint(tablet) {
+           background-position: 220% 90%;  
+        }
     }
 }
 
@@ -40,6 +52,10 @@
     background-image: url('../../img/bg-lines.svg');
     background-position: 250% 67%;
     background-repeat: no-repeat;
+
+    @include breakpoint(tablet) {
+        background-position: -140% 75%;  
+    }
 }
 
 

@@ -8,12 +8,18 @@
 }
 
 .footer {   
+
+    
     &__contact {
         margin-bottom: 5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1.25rem;
+        @include breakpoint(tablet) {
+            padding-left: 9rem;
+            padding-right: 9rem;
+        }
         
         &--title {
             font-size: 2.5rem;
@@ -21,6 +27,13 @@
             font-weight: 700;
             line-height: 2.5rem;
             letter-spacing: -0.071rem;
+
+            @include breakpoint(tablet) {
+                font-size: 4.5rem;
+                line-height: 5.2rem;
+                letter-spacing: -2.04545px;
+                text-align: start;
+            }
         }
 
         &--subtitle {
@@ -37,6 +50,11 @@
 
         padding-bottom: 5.44rem;
         border-bottom: 1px solid $white;
+
+        @include breakpoint(tablet) {
+            padding-left: 9rem;
+            padding-right: 9rem;
+        }
         
         &--group {
             display: flex;
@@ -137,6 +155,13 @@
     &>header {
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
+
+        @include breakpoint(tablet) {
+            padding-bottom: 3rem;
+            padding-left: 0;
+            padding-right: 0;
+            justify-content: space-between;
+        }
     }
 }
 

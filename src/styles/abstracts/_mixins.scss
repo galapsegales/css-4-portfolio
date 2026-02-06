@@ -35,7 +35,7 @@
   }
 }
 
-/* IMG SWITCHERS */
+/* HERO IMG SWITCHER */
 
 @mixin hero-img-switcher($base-path) {
   
@@ -54,6 +54,8 @@
   }
 }
 
+/* PROJECT IMG SWITCHER */
+
 @mixin project-img-switcher($base-path) {
   
   background-image: url("#{$base-path}-m.png"), linear-gradient(180deg, rgba(36, 36, 36, 0.00) 0.65%, #242424 100%);
@@ -63,6 +65,26 @@
   // Desktop
   @include breakpoint(desktop) {
     background-image: url("#{$base-path}-desktop.png");
+  }
+}
+
+/* LOGO SWITCHER */
+
+@mixin logo-switcher($base-path) {
+  
+  background-image: url("#{$base-path}-m.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  // Tablet
+  @include breakpoint(tablet) {
+    background-image: url("#{$base-path}-tablet.svg");
+  }
+
+  // Desktop
+  @include breakpoint(desktop) {
+    background-image: url("#{$base-path}-desktop.svg");
   }
 }
 

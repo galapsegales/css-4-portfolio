@@ -8,6 +8,10 @@
     gap: 3rem;
     padding-bottom: 5rem;
 
+    @include breakpoint(tablet) {
+        padding-bottom: 7rem;
+    }
+
     &__header {
         display: flex;
         align-items: center;
@@ -20,7 +24,28 @@
             font-weight: 700;
             line-height: 2.5rem; /* 100% */
             letter-spacing: -0.071rem;
+
+            @include breakpoint(tablet) {
+                font-size: 4.5rem;
+                line-height: 5.2rem;
+                letter-spacing: -2.04545px;
+                text-align: start;
+            }
         }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        @include breakpoint(tablet) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 4.2rem 2rem;
+        }
+        
     }
 
     .project {
@@ -69,6 +94,7 @@
             display: flex;
             justify-content: flex-start;
             gap: 2rem;
+
             &-name {
                 font-size: 1.125rem;
                 font-style: normal;

@@ -5,6 +5,10 @@
 
 .hero {
 
+    @include breakpoint(tablet) {
+        position: relative;
+        padding-bottom: 7rem;
+    }
 
     &__img {
         width: 55%;
@@ -16,8 +20,15 @@
         
         @include hero-img-switcher('../../src/img/hero');
         aspect-ratio: 87 / 121;
-        
 
+        @include breakpoint(tablet) {
+            aspect-ratio: 162 / 301;
+            position: absolute;
+            right: 0;
+            top: -18%;
+            z-index: -1;
+            width: 45%;
+        }
     }
 
     &__content {
@@ -28,6 +39,14 @@
         padding-bottom: 5rem;
         border-bottom: 1px solid $white;
 
+        @include breakpoint(tablet) {
+            max-width: 65%;
+            padding-top: 5rem;
+            border-bottom: none;
+            align-items: flex-start;
+            padding-bottom: 0;
+        }
+
         &--title {
             text-align: center;
             font-family: $font-stack;
@@ -36,12 +55,34 @@
             font-weight: 700;
             line-height: 2.5rem;
             letter-spacing: -0.071rem;
+
+            @include breakpoint(tablet) {
+                font-size: 4.5rem;
+                line-height: 5.2rem;
+                letter-spacing: -2.04545px;
+                text-align: start;
+
+            }
+            
+            .br-tablet {
+                display: none;
+                
+                @include breakpoint(tablet) {
+                    display: inline;
+                }
+            }
+
             >span {
                 font-size: inherit;
                 text-decoration: underline;
                 text-decoration-thickness: 0.25rem;
                 text-decoration-color: $green;
                 text-underline-offset: 0.22rem;
+
+                @include breakpoint(tablet) {
+                    text-decoration-thickness: 0.5rem;
+                    text-underline-offset: 0.40rem;
+                }
             }
         }
 
@@ -52,6 +93,15 @@
             font-weight: 500;
             line-height: 1.625rem;
             color: $light-grey;
+
+            @include breakpoint(tablet) {
+                font-size: 1.25rem;
+                line-height: 156%;
+                text-align: start;
+                padding-top: 3rem;
+                padding-bottom: 1.8rem;
+                max-width: 90%;
+            }
         }
     }
 }

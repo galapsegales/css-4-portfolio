@@ -10,12 +10,31 @@
     gap: 1.5rem;
     padding: 2.5rem;
     border-bottom: 1px solid $white;
+    border-top: 1px solid $white;
+
+    @include breakpoint(tablet) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-items: start;
+        align-items: start;
+        gap: 2.5rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 3rem;
+        border-bottom: none;
+    }
 
     &__item {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 0.15rem;
+
+        @include breakpoint(tablet) {
+            align-items: start;
+            gap: 1rem;
+        }
 
         &--title {
             text-align: center;
@@ -24,6 +43,13 @@
             font-weight: 700;
             line-height: 2.5rem;
             letter-spacing: -0.0625rem;
+
+            @include breakpoint(tablet) {
+                font-size: 3.2rem;
+                line-height: 117%;
+                letter-spacing: -2.04545px;
+                text-align: start;
+            }
         }
 
         &--description {
@@ -32,6 +58,13 @@
             font-style: normal;
             font-weight: 500;
             line-height: 1.625rem;
+
+            @include breakpoint(tablet) {
+                font-size: 1.25rem;
+                line-height: 156%;
+                text-align: start;
+                color: $light-grey;
+            }
         }
     }
 }
