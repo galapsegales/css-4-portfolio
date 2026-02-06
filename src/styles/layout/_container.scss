@@ -13,6 +13,11 @@
         padding-left: 2.5rem;
         padding-right: 2.5rem;
     }
+
+    @include breakpoint(desktop){
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
 }
 
 .containerbg_head {
@@ -23,6 +28,17 @@
 
     @include breakpoint(tablet) {
         background-position: -90% 5%, 109% 44%;
+    }
+
+    @include breakpoint(tablethorizontal) {
+        background-position: -50% 8%, 69% 40%;
+    }
+
+    @include breakpoint(desktop) {
+        background-position: -30% 8%, 58% 40%;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: $bp-desktop-xl;
     }
 }
 
@@ -45,6 +61,17 @@
         @include breakpoint(tablet) {
            background-position: 220% 90%;  
         }
+
+        @include breakpoint(tablethorizontal){
+            background-position: 150% 100%;
+        }
+
+        @include breakpoint(desktop) {
+            background-position: 150% 80%;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: $bp-desktop-xl;
+        }
     }
 }
 
@@ -55,6 +82,10 @@
 
     @include breakpoint(tablet) {
         background-position: -140% 75%;  
+    }
+
+    @include breakpoint(tablethorizontal) {
+        background-position: -40% 60%;
     }
 }
 

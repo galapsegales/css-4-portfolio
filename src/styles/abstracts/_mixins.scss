@@ -49,7 +49,7 @@
   }
 
   // Desktop
-  @include breakpoint(desktop) {
+  @include breakpoint(tablethorizontal) {
     background-image: url("#{$base-path}-desktop.png");
   }
 }

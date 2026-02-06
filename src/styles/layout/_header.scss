@@ -36,6 +36,10 @@
               gap: 2rem;
             }
 
+            @include breakpoint(tablethorizontal) {
+              padding-right: 2rem;
+            }
+
             >li {
                 @include reset-list;
             }

@@ -25,6 +25,12 @@
         border-bottom: none;
     }
 
+    @include breakpoint(tablethorizontal) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding-top: 4rem;
+    }
+
     &__item {
         display: flex;
         flex-direction: column;

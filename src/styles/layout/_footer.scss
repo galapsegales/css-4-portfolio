@@ -5,20 +5,33 @@
 .footerbg {
     background-color: $dark-grey;
     padding-top: 3.75rem;
+
+    @include breakpoint(desktop) {
+        max-width: $bp-desktop-xl;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .footer {   
-
-    
     &__contact {
         margin-bottom: 5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1.25rem;
+        
         @include breakpoint(tablet) {
             padding-left: 9rem;
             padding-right: 9rem;
+        }
+
+        @include breakpoint(tablethorizontal) {
+            min-width: 40%;
+            padding-left: 0;
+            padding-right: 0;
+            align-items: flex-start;
+        
         }
         
         &--title {
@@ -34,6 +47,7 @@
                 letter-spacing: -2.04545px;
                 text-align: start;
             }
+
         }
 
         &--subtitle {
@@ -43,6 +57,11 @@
             font-style: normal;
             font-weight: 500;
             line-height: 1.625rem;
+
+            @include breakpoint(tablethorizontal) {
+                text-align: left;
+                max-width: 78%;
+            }
         }
     }
 
@@ -54,6 +73,13 @@
         @include breakpoint(tablet) {
             padding-left: 9rem;
             padding-right: 9rem;
+        }
+
+        @include breakpoint(tablethorizontal) {
+            min-width: 40%;
+            padding-left: 0;
+            padding-right: 0;
+            border-bottom: none;
         }
         
         &--group {
@@ -162,6 +188,20 @@
             padding-right: 0;
             justify-content: space-between;
         }
+    }
+}
+
+.footer__nav--social {
+    @include breakpoint(tablet) {
+       padding-right: 0; 
+    }
+}
+
+.footer-wrapper {
+    @include breakpoint(tablethorizontal) {
+        display: flex;
+        gap: 10%;
+        border-bottom: 1px solid $white;
     }
 }
 

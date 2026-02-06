@@ -10,6 +10,11 @@
         padding-bottom: 7rem;
     }
 
+    @include breakpoint(desktop) {
+        padding-top: 5rem;
+        padding-bottom: 12rem;
+    }
+
     &__img {
         width: 55%;
         margin-left: auto;
@@ -29,6 +34,22 @@
             z-index: -1;
             width: 45%;
         }
+
+        @include breakpoint(tablethorizontal) {
+            aspect-ratio: 447 / 722;
+            right: 2.5rem;
+            top: -22%;
+            width: 30%;
+        }
+
+        @include breakpoint(desktop) {
+            right: 6rem;
+            width: 35%;
+            top: -18%;
+        }
+
+
+
     }
 
     &__content {
@@ -47,6 +68,15 @@
             padding-bottom: 0;
         }
 
+        @include breakpoint(tablethorizontal) {
+            padding-top: 5rem;
+        }
+
+        @include breakpoint(desktop) {
+            padding-top: 2.5rem;
+        }
+
+
         &--title {
             text-align: center;
             font-family: $font-stack;
@@ -61,7 +91,13 @@
                 line-height: 5.2rem;
                 letter-spacing: -2.04545px;
                 text-align: start;
+            }
 
+            @include breakpoint(desktop) {
+                font-size: 5rem;
+                line-height: 5.5rem;
+                letter-spacing: -2.04545px;
+                text-align: start;
             }
             
             .br-tablet {
@@ -70,6 +106,18 @@
                 @include breakpoint(tablet) {
                     display: inline;
                 }
+
+                @include breakpoint(tablethorizontal) {
+                    display: none;
+                }  
+            }
+
+            .br-tablethorizontal {
+                display: none;
+
+                @include breakpoint(tablethorizontal) {
+                    display: inline;
+                }  
             }
 
             >span {
@@ -82,6 +130,11 @@
                 @include breakpoint(tablet) {
                     text-decoration-thickness: 0.5rem;
                     text-underline-offset: 0.40rem;
+                }
+
+                @include breakpoint (desktop) {
+                    text-decoration-thickness: 0.6rem;
+                    text-underline-offset: 0.45rem;
                 }
             }
         }
@@ -101,6 +154,11 @@
                 padding-top: 3rem;
                 padding-bottom: 1.8rem;
                 max-width: 90%;
+            }
+
+            @include breakpoint(desktop) {
+                max-width: 67%;
+                padding-top: 2.5rem;
             }
         }
     }
